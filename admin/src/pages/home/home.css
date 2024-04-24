@@ -1,0 +1,27 @@
+.btn{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.btn:focus{
+    background-color:#1677FF ;
+}
+.addUserTitle{
+    font-size: 18px;
+}
+.addUser{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+.addUserButton{
+    border: none;
+    height: 45px;
+    font-size: 18px;
+    border: 1px solid green;
+    border-radius: 7px;
+    color: green;
+}

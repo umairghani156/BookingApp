@@ -1,0 +1,28 @@
+{
+    "name": "bookingApp",
+    "version": "1.0.0",
+    "scripts": {
+      "install:client": "cd client && npm install",
+      "build:client": "cd client && npm run build",
+      "install:api": "cd api && npm install",
+      "build:api": "cd api && npm run build",
+      "install:admin": "cd admin && npm install",
+      "build:admin": "cd admin && npm run build",
+      "build": "npm run install:client && npm run build:client && npm run install:api && npm run build:api",
+      "start": "cd api && npm start"
+    },
+    "dependencies": {
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "express": "^4.17.1",
+      "axios": "^0.21.1"
+    },
+    "devDependencies": {
+      "vite": "2.6.1",
+      "@vitejs/plugin-react": "^1.0.0"
+    },
+    "engines": {
+      "node": "14.x"
+    }
+  }
+  

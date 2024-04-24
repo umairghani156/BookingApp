@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+import "./home.css"
+import { Navigate, useNavigate } from 'react-router-dom';
+import { FaHotel } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
+import { MdDashboardCustomize } from "react-icons/md";
+
+
+
 import {
   DesktopOutlined,
   FileOutlined,
@@ -18,14 +26,10 @@ function getItem(label, key, icon, children) {
 }
 const items = [
   getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
-  ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '9', <FileOutlined />),
+  getItem('Option 2', '2', <FaHotel />),
+  getItem('Users', 'sub1', <UserOutlined  />),
+  getItem('Hotels', 'sub2', <FaHotel />),
+  getItem('Rooms', '9', <MdDateRange />),
 ];
 const Home = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -33,12 +37,18 @@ const Home = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   return (
+    <>
+    <div>
+    </div>
     <Layout
       style={{
         minHeight: '100vh',
       }}
     >
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+        <div className='dashboard'style={{padding:"0 5px"}}>
+          <button className='btn' style={{width:"100%", display:"flex",gap:"10px", padding:"10px 0 10px 18px", borderRadius:"10px", fontSize:"16px"}}><MdDashboardCustomize size={17}/>Dashboard</button>
+        </div>
         <div className="demo-logo-vertical" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
@@ -51,10 +61,14 @@ const Home = () => {
           <Breadcrumb
             style={{
               margin: '16px 0',
+              
             }}
           >
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>Users</Breadcrumb.Item>
+           <div className="addUser">
+           <h2 className='addUserTitle'>Add New User</h2>
+           <button className='addUserButton'>Add New</button>
+           </div>
+           
           </Breadcrumb>
           <div
             style={{
@@ -70,6 +84,7 @@ const Home = () => {
        
       </Layout>
     </Layout>
+    </>
   );
 };
 export default Home;

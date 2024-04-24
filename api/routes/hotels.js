@@ -20,7 +20,7 @@ router.put("/:id",verifyAdmin, updateHotel);
 //DELETE
 //http://localhost:5000/api/hotels/:id
 
-router.delete("/:id",verifyAdmin, deleteHotel)
+router.delete("/find/:id",verifyAdmin, deleteHotel)
 
 
 //GET
